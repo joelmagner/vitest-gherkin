@@ -1,0 +1,24 @@
+{
+  "name": "vitest-gherkin",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joelmagner/vitest-gherkin.git"
+  },
+  "keywords": [],
+  "author": "Joel Magnér",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joelmagner/vitest-gherkin/issues"
+  },
+  "homepage": "https://github.com/joelmagner/vitest-gherkin#readme",
+  "devDependencies": {
+    "vitest": "^0.29.2"
+  }
+}
