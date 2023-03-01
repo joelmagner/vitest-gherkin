@@ -11,11 +11,11 @@ globalThis.But = test;
 
 const Feature = globalThis.Feature;
 const Scenario = globalThis.Scenario;
-const _BeforeEachScenario = globalThis.BeforeEachScenario;
+const beforeEachScenario = globalThis.BeforeEachScenario;
 const Given = globalThis.Given;
 const When = globalThis.When;
 const Then = globalThis.Then;
 const And = globalThis.And;
 const But = globalThis.But;
 
-export { Feature, Scenario, Given, When, Then, And, But, _BeforeEachScenario as BeforeEachScenario };
+export { Feature, Scenario, Given, When, Then, And, But, beforeEachScenario };
