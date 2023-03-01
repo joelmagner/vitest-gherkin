@@ -12,62 +12,55 @@ npm i -D vitest-gherkin
 
 ## Usage
 
-### Enable the vitest-gherkin integration
+### Enable `Vitest Gherkin` integration for all tests:
+
+```javascript
+// vitest.config.js
+import { defineConfig } from "vitest/config";
+
+export default defineConfig({
+  plugins: [
+    {
+      name: "setup",
+      config: () => ({
+        test: {
+          setupFiles: ["./setupVitest.js"],
+        },
+      }),
+    },
+  ],
+});
+
+// inside setupVitest.js
+import "vitest-gherkin";
+```
 
 ### Test structure
 
 ```javascript
 Feature("Some feature", () => {
   Scenario("Some Scenario", () => {
-    let number = 2;
-
-    Given("a number", () => {
-      number.should.exist;
-    });
-    And("that number is 2", () => {
-      number.should.equal(2);
-    });
-
-    When("adding 40", () => {
-      number += 40;
-    });
-
-    Then("the number should be 42", () => {
-      number.should.equal(42);
-    });
+    Given("Example", () => {});
+    And("Another example", () => {});
+    When("Another example", () => {});
+    Then("Another example", () => {});
   });
 });
 ```
 
-The result will look something like this:
-
 The common vitest functions (`describe`, `it`, `before`, `after`, etc) are also available and can be used together with Vitest Gherkin.
 
-Your tests should look like this:
+You can also import it like this:
 
-```
-import 'vitest-gherkin';
+```javascript
+import "vitest-gherkin";
 
-Feature('Some feature', () => {
-
-  Scenario('Some Scenario', () => {
-
-    let number = 2;
-
-    Given('a number', () => {
-
-    });
-    And('that number is 2', () => {
-
-    });
-
-    When('adding 40', () => {
-
-    });
-
-    Then('the number should be 42', () => {
-
-    });
+Feature("Some feature", () => {
+  Scenario("Some Scenario", () => {
+    Given("Example", () => {});
+    And("Another example", () => {});
+    When("Another example", () => {});
+    Then("Another example", () => {});
   });
 });
 ```
@@ -76,74 +69,12 @@ Feature('Some feature', () => {
 
 The Vitest Gherkin integration adds the following functions to the global scope:
 
-- `Feature | feature`
-  - `Scenario | scenario`
-    - `Given | given`
-    - `When | when`
-    - `Then | then`
-    - `And | and`
-    - `But | but`
+- `Feature | Suite`
+  - `Scenario | Describe`
+    - `Given | Test`
+    - `When | Test`
+    - `Then | Test`
+    - `And | Test`
+    - `But | Test`
 
-### `.skip`
-
-Skips a test clause. Works on all test functions.
-
-```javascript
-Feature("Some feature", () => {
-  Scenario.skip("Skipped scenario", () => {
-    // ...
-  });
-
-  Scenario("Ordinary", () => {
-    // ...
-  });
-});
-```
-
-### `.only`
-
-Only run the specified test clause. Works on all test functions.
-
-```javascript
-Feature("Some feature", () => {
-  Scenario("First scenario", () => {
-    // ...
-  });
-
-  Scenario("Second scenario", () => {
-    // ...
-  });
-
-  Scenario.only("Only I will run!", () => {
-    // ...
-  });
-
-  // ...
-});
-```
-
-```javascript
-Feature("Some feature", () => {
-  Scenario("First scenario", () => {
-    // ...
-  });
-
-  Scenario("Second scenario", () => {
-    // ...
-  });
-
-  // ...
-});
-```
-
-```javascript
-Feature("Some feature", () => {
-  // ...
-});
-
-Feature("Another feature", () => {
-  // ...
-});
-
-// ...
-```
+### All of the default functionality from Vitest is still available.
