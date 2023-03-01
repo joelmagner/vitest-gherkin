@@ -70,11 +70,16 @@ Feature("Some feature", () => {
 The Vitest Gherkin integration adds the following functions to the global scope:
 
 - `Feature | Suite`
+
   - `Scenario | Describe`
     - `Given | Test`
     - `When | Test`
     - `Then | Test`
     - `And | Test`
     - `But | Test`
+
+### lifecycle hook:
+
+- BeforeEachScenario | BeforeEach
 
 ### All of the default functionality from Vitest is still available.
