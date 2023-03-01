@@ -1,7 +1,7 @@
 {
   "name": "vitest-gherkin",
-  "version": "1.0.5",
-  "description": "Gherkin / cucumber syntax for Vitest",
+  "version": "1.0.6",
+  "description": "Gherkin / cucumber syntax for Vitest testing framework",
   "type": "module",
   "main": "index.js",
   "scripts": {
