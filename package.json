@@ -1,6 +1,6 @@
 {
   "name": "vitest-gherkin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Gherkin / cucumber syntax for Vitest",
   "type": "module",
   "main": "index.js",
@@ -11,7 +11,13 @@
     "type": "git",
     "url": "git+https://github.com/joelmagner/vitest-gherkin.git"
   },
-  "keywords": [],
+  "keywords": [
+    "vitest",
+    "gherkin",
+    "cucumber",
+    "mocha",
+    "cakes"
+  ],
   "author": "Joel Magnér",
   "license": "ISC",
   "bugs": {
