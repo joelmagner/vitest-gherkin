@@ -50,18 +50,13 @@ Feature("Some feature", () => {
 
 The common vitest functions (`describe`, `it`, `before`, `after`, etc) are also available and can be used together with Vitest Gherkin.
 
-You can also import it like this:
+You can also import it like this at the top of a test-file:
 
 ```javascript
 import "vitest-gherkin";
 
 Feature("Some feature", () => {
-  Scenario("Some Scenario", () => {
-    Given("Example", () => {});
-    And("Another example", () => {});
-    When("Another example", () => {});
-    Then("Another example", () => {});
-  });
+  /**/
 });
 ```
 
@@ -70,7 +65,6 @@ Feature("Some feature", () => {
 The Vitest Gherkin integration adds the following functions to the global scope:
 
 - `Feature | Suite`
-
   - `Scenario | Describe`
     - `Given | Test`
     - `When | Test`
@@ -80,6 +74,30 @@ The Vitest Gherkin integration adds the following functions to the global scope:
 
 ### lifecycle hook:
 
-- BeforeEachScenario | BeforeEach
+- `beforeEachScenario | beforeEach`
+
+Example:
+
+```javascript
+Feature("beforeEachScenario hook", () => {
+  let num = 0;
+  beforeEachScenario(() => {
+    num = 0;
+  });
+
+  Scenario("Add value to 'num'", () => {
+    Given("add 2 to 'num'", () => {
+      num += 2;
+      expect(num).toEqual(2);
+    });
+  });
+
+  Scenario("Verify that 'num' has been reset", () => {
+    Given("'num' has been reset to 0", () => {
+      expect(num).toEqual(0);
+    });
+  });
+});
+```
 
 ### All of the default functionality from Vitest is still available.

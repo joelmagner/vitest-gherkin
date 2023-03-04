@@ -2,7 +2,7 @@ import { beforeEach, describe, suite, test } from "vitest";
 
 globalThis.Feature = suite;
 globalThis.Scenario = describe;
-globalThis.BeforeEachScenario = beforeEach;
+globalThis.beforeEachScenario = beforeEach;
 globalThis.Given = test;
 globalThis.When = test;
 globalThis.Then = test;
@@ -11,7 +11,7 @@ globalThis.But = test;
 
 const Feature = globalThis.Feature;
 const Scenario = globalThis.Scenario;
-const beforeEachScenario = globalThis.BeforeEachScenario;
+const beforeEachScenario = globalThis.beforeEachScenario;
 const Given = globalThis.Given;
 const When = globalThis.When;
 const Then = globalThis.Then;
