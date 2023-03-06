@@ -72,9 +72,10 @@ The Vitest Gherkin integration adds the following functions to the global scope:
     - `And | Test`
     - `But | Test`
 
-### lifecycle hook:
+### lifecycle hooks:
 
 - `beforeEachScenario | beforeEach`
+- `beforeAllScenarios | beforeAll`
 
 Example:
 
