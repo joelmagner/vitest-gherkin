@@ -75,7 +75,9 @@ The Vitest Gherkin integration adds the following functions to the global scope:
 ### lifecycle hooks:
 
 - `beforeEachScenario | beforeEach`
+- `afterEachScenario | afterEach`
 - `beforeAllScenarios | beforeAll`
+- `afterAllScenarios | afterAll`
 
 Example:
 
